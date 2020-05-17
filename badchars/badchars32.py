@@ -3,7 +3,11 @@ import random
 
 
 def addr_conv(input):
-    return input.to_bytes(4, "little")
+    data = ""
+    new_inp = hex(input)[2:].rjust(8, "0")
+    for i in range(0, len(new_inp), 2):
+        data = "\\x" + new_inp[i] + new_inp[i+1] + data
+    return data
 
 def convertor(input):
     data = ""
